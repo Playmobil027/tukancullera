@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TukanCullera · Cullera | Paella y marisco para compartir</title>
+<meta name="description" content="TukanCullera · Cullera. Paella, marisco y raciones generosas en Carrer Barcelona, 3. 4,5 en Google con 518 reseñas. Reserva por teléfono o WhatsApp.">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="TukanCullera · Cullera">
+<meta property="og:description" content="Paella, marisco y raciones generosas en Cullera. 4,5 en Google con 518 reseñas.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=1200&h=630&fit=crop">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#121212">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121212; --pico:#FFB703; --coral:#C8321F; --selva:#0B5F57; --blanco:#FFFDF8;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --gutter:16px; --max:1120px;
+  --display:'Bricolage Grotesque',system-ui,sans-serif; --body:'Figtree',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 17px/1.55 var(--body);color:var(--ink);background:var(--blanco);padding-bottom:72px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pico);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,6vw,3.4rem);font-weight:800;margin-bottom:24px}
+section{padding:64px 0}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;font:600 1rem var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 160ms ease}
+.btn:active{transform:scale(.97)}
+.btn-pico{background:var(--pico);color:var(--ink)}
+.btn-line{border-color:currentColor;color:#fff}
+.btn-ink{background:var(--ink);color:#fff}
+@media (hover:hover) and (pointer:fine){
+  .btn-pico:hover{background:#ffc83a}
+  .btn-line:hover{background:rgba(255,255,255,.12)}
+  .btn-ink:hover{background:#2a2a2a}
+}
+
+/* cabecera */
+header{position:fixed;inset:0 0 auto 0;z-index:20;background:rgba(18,18,18,.92);color:#fff}
+.bar{display:flex;align-items:center;gap:12px;min-height:60px}
+.logo{font:800 1.35rem var(--display);text-decoration:none;letter-spacing:-.02em;margin-right:auto;min-height:44px;display:inline-flex;align-items:center}
+.logo span{color:var(--pico)}
+.lang{display:flex;border:2px solid rgba(255,255,255,.35);border-radius:999px;overflow:hidden}
+.lang button{min-width:44px;min-height:40px;background:none;border:0;color:#fff;font:600 .9rem var(--body);cursor:pointer;transition:background-color 160ms ease}
+.lang button[aria-pressed="true"]{background:var(--pico);color:var(--ink)}
+.burger{width:44px;height:44px;background:none;border:0;color:#fff;cursor:pointer;display:grid;place-items:center}
+.burger i{display:block;width:22px;height:2px;background:currentColor;box-shadow:0 7px 0 currentColor,0 -7px 0 currentColor}
+nav{position:absolute;top:100%;left:0;right:0;background:var(--ink);padding:8px var(--gutter) 20px;display:flex;flex-direction:column;opacity:0;transform:translateY(-8px);visibility:hidden;transition:opacity 200ms var(--ease-out),transform 200ms var(--ease-out),visibility 0s 200ms}
+nav.open{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+nav a{display:flex;align-items:center;min-height:48px;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(255,255,255,.12)}
+.hbtn{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--selva);padding:96px 0 0;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,18,18,.45) 0%,rgba(18,18,18,.25) 35%,rgba(18,18,18,.88) 100%);z-index:1}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:56px}
+.hero h1{font-size:clamp(2.7rem,11.5vw,6.6rem);font-weight:800;max-width:11ch;text-wrap:balance}
+.hero p.lead{font-size:1.15rem;max-width:34ch;margin:18px 0 26px;color:#f1ede4}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.sello{position:absolute;z-index:2;right:var(--gutter);top:84px;background:var(--pico);color:var(--ink);border-radius:50%;width:104px;height:104px;display:grid;place-content:center;text-align:center;font:800 1rem/1.05 var(--display);transform:rotate(8deg)}
+.sello b{font-size:1.55rem;display:block}
+.sello small{font:600 .68rem/1.1 var(--body);display:block;margin-top:2px}
+.pico-band{position:absolute;z-index:2;left:0;right:0;bottom:0;height:12px;background:linear-gradient(90deg,var(--ink) 0 22%,var(--pico) 22% 62%,var(--coral) 62% 100%)}
+.estado{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;font-weight:600;font-size:.95rem;min-height:32px}
+.estado i{width:10px;height:10px;border-radius:50%;background:#9aa;display:inline-block}
+.estado.on i{background:#4ade80}.estado.off i{background:#ff7a66}
+
+/* por qué */
+.why-grid{display:grid;gap:28px}
+.big{background:var(--ink);color:#fff;padding:28px 24px;border-radius:4px 40px 4px 4px}
+.big h3{font-size:clamp(2.6rem,9vw,5rem);font-weight:800;color:var(--pico)}
+.big p{margin-top:12px;max-width:36ch}
+.mid h3{font-size:1.7rem;font-weight:800;border-left:6px solid var(--coral);padding-left:14px;margin-bottom:8px}
+.small{font-size:.98rem;color:#3b3b3b;max-width:40ch}
+.small b{font-family:var(--display);font-size:1.1rem}
+
+/* carta */
+.carta{background:var(--selva);color:#fff}
+.carta h2{color:#fff}
+.carta-grid{display:grid;gap:28px}
+.platos{list-style:none;padding:0}
+.platos li{display:flex;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.25)}
+.platos strong{font:800 clamp(1.3rem,4.5vw,1.8rem) var(--display);letter-spacing:-.01em}
+.platos span{margin-left:auto;font-size:.9rem;color:#d6efe9;text-align:right}
+.carta-note{margin-top:16px;font-size:.95rem;color:#d6efe9}
+.carta-img{border-radius:40px 4px 4px 4px;overflow:hidden;background:var(--coral)}
+.carta-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+
+/* galería */
+.gal{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+.gal figure{overflow:hidden;background:var(--selva);border-radius:4px}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal .g1{grid-column:span 2;grid-row:span 2}
+.gal .g4{grid-row:span 2}
+.gal .g5{grid-column:span 2}
+
+/* reseñas + horario */
+.rev{background:var(--ink);color:#fff}
+.rev-grid{display:grid;gap:40px}
+.quotes{display:grid;gap:18px}
+blockquote{border-left:4px solid var(--pico);padding:2px 0 2px 16px}
+blockquote p{font:500 1.35rem/1.25 var(--display)}
+blockquote cite{display:block;margin-top:8px;font-style:normal;font-size:.9rem;color:#cfcfcf}
+.stars{color:var(--pico);letter-spacing:2px}
+.rev .note{font-size:.88rem;color:#bdbdbd;margin-top:14px}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:11px 12px;font-weight:400;border-bottom:1px solid rgba(255,255,255,.18)}
+td:last-child{text-align:right}
+tr.hoy{background:var(--pico);color:var(--ink);font-weight:600}
+tr.hoy th{font-weight:600}
+.hrs h3{font-size:1.8rem;margin-bottom:12px}
+
+/* contacto */
+.contacto{background:var(--pico)}
+.contacto h2{max-width:14ch}
+.c-grid{display:grid;gap:28px}
+address{font-style:normal;font-size:1.15rem;margin-bottom:14px}
+.c-btns{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.tags{list-style:none;padding:0;display:grid;gap:8px;font-weight:600}
+.tags li{padding-left:28px;position:relative}
+.tags li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:10px;background:var(--ink);border-radius:2px 10px 2px 10px}
+.mapa{border:0;width:100%;height:340px;border-radius:4px;background:var(--ink)}
+footer{background:var(--ink);color:#d6d6d6;padding:28px 0;font-size:.92rem}
+footer .wrap{display:grid;gap:8px}
+footer a{display:inline-flex;align-items:center;min-height:44px}
+
+/* barra fija móvil */
+.fixbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px var(--gutter);background:var(--ink)}
+.fixbar .btn{min-height:48px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity 260ms var(--ease-out),transform 260ms var(--ease-out);transition-delay:var(--d,0ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{transform:none;transition:opacity 200ms ease}
+  nav{transform:none}
+  .btn:active{transform:none}
+}
+
+@media (min-width:760px){
+  body{padding-bottom:0;font-size:18px}
+  section{padding:96px 0}
+  :root{--gutter:32px}
+  .burger,.fixbar{display:none}
+  nav{position:static;flex-direction:row;gap:22px;padding:0;opacity:1;transform:none;visibility:visible;background:none}
+  nav a{border:0;min-height:44px;font-size:.98rem}
+  .hbtn{display:inline-flex;min-height:44px}
+  .sello{top:100px;width:140px;height:140px;right:32px;font-size:1.2rem}.sello b{font-size:2.1rem}.sello small{font-size:.8rem}
+  .hero .wrap{padding-bottom:88px}
+  .why-grid{grid-template-columns:1.3fr 1fr;grid-template-areas:"a b" "a c";gap:36px 56px;align-items:start}
+  .big{grid-area:a;padding:44px 40px}.mid{grid-area:b}.small{grid-area:c}
+  .carta-grid{grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+  .carta-img{position:sticky;top:90px}
+  .carta-img img{aspect-ratio:4/5}
+  .gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:190px}
+  .gal .g1{grid-column:span 2;grid-row:span 2}.gal .g5{grid-column:span 2}
+  .rev-grid{grid-template-columns:1.2fr 1fr;gap:72px}
+  .c-grid{grid-template-columns:1fr 1.2fr;gap:56px}
+  .mapa{height:100%;min-height:420px}
+  footer .wrap{grid-template-columns:1fr auto;align-items:center}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="TukanCullera">Tukan<span>Cullera</span></a>
+    <nav id="nav" aria-label="Principal">
+      <a href="#carta" data-va="Carta">Carta</a>
+      <a href="#galeria" data-va="Galeria">Galería</a>
+      <a href="#opiniones" data-va="Ressenyes i horari">Opiniones y horario</a>
+      <a href="#contacto" data-va="Contacte">Contacto</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma / Idioma">
+      <button type="button" data-l="es" aria-pressed="true">ES</button>
+      <button type="button" data-l="va" aria-pressed="false">VA</button>
+    </div>
+    <a class="btn btn-pico hbtn" href="tel:+34620747461" data-va="Reserva taula">Reserva mesa</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú" data-va-aria="Menú"><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-top:96px">
+  <img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=1600&h=1000&fit=crop" width="1600" height="1000" alt="Paella de marisco en una paellera" data-va-alt="Paella de marisc en una paellera">
+  <div class="sello" role="img" aria-label="4,5 sobre 5, 518 reseñas en Google" data-va-aria="4,5 sobre 5, 518 ressenyes a Google"><span><b>4,5 ★</b>518<small data-va="ressenyes a Google">reseñas en Google</small></span></div>
+  <div class="wrap">
+    <p class="estado" id="estado" aria-live="polite"><i></i><span></span></p>
+    <h1 data-va="Paella i marisc per a compartir a Cullera.">Paella y marisco para compartir en Cullera.</h1>
+    <p class="lead" data-va="Plats abundants, servei molt amable i taula a Carrer Barcelona, 3.">Platos abundantes, trato muy amable y mesa en Carrer Barcelona, 3.</p>
+    <div class="cta">
+      <a class="btn btn-pico" href="https://wa.me/34620747461?text=Hola%2C%20quiero%20reservar%20mesa%20en%20TukanCullera." data-va="Reserva taula">Reserva mesa</a>
+      <a class="btn btn-line" href="tel:+34620747461" data-va="Crida'ns">Llámanos</a>
+    </div>
+  </div>
+  <div class="pico-band" aria-hidden="true"></div>
+</section>
+
+<section aria-labelledby="why">
+  <div class="wrap">
+    <h2 id="why" data-va="Per què vindre">Por qué venir</h2>
+    <div class="why-grid">
+      <div class="big rv">
+        <h3 data-va="La paella">La paella</h3>
+        <p data-va="És el plat més comentat. Una ressenya de Google la defineix com la millor paella de la ciutat.">Es el plato más comentado. Una reseña de Google la define como la mejor paella de la ciudad.</p>
+      </div>
+      <div class="mid rv" style="--d:60ms">
+        <h3 data-va="Racions generoses">Raciones generosas</h3>
+        <p class="small" data-va="Les ressenyes destaquen plats abundants pel que costen. Preu mitjà: 20-30 € per persona.">Las reseñas destacan platos abundantes para lo que cuestan. Precio medio: 20-30 € por persona.</p>
+      </div>
+      <p class="small rv" style="--d:120ms"><b data-va="Tracte familiar.">Trato familiar.</b> <span data-va="Una ressenya diu que el servei és molt amable i que hi ha ambient familiar.">Una reseña dice que el servicio es muy amable y que hay ambiente familiar.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="carta" id="carta" aria-labelledby="tc">
+  <div class="wrap carta-grid">
+    <div>
+      <h2 id="tc" data-va="Plats de la carta">Platos de la carta</h2>
+      <ul class="platos">
+        <li class="rv"><strong data-va="Paella">Paella</strong><span data-va="Arròs">Arroz</span></li>
+        <li class="rv" style="--d:40ms"><strong data-va="Galta de porc">Carrillera de cerdo</strong><span data-va="Carn">Carne</span></li>
+        <li class="rv" style="--d:80ms"><strong data-va="Patates braves">Patatas bravas</strong><span data-va="Per a picar">Para picar</span></li>
+        <li class="rv" style="--d:120ms"><strong data-va="Gambes a l'all">Gambas al ajillo</strong><span data-va="Marisc">Marisco</span></li>
+        <li class="rv" style="--d:160ms"><strong data-va="Calamar sencer">Calamar entero</strong><span data-va="Entrant">Entrante</span></li>
+        <li class="rv" style="--d:200ms"><strong data-va="Broqueta de vieira i gambes">Brocheta de vieira y gambas</strong><span data-va="Marisc">Marisco</span></li>
+        <li class="rv" style="--d:240ms"><strong data-va="Peix espasa">Pez espada</strong><span data-va="Peix">Pescado</span></li>
+        <li class="rv" style="--d:280ms"><strong data-va="Tires de pollastre">Tiras de pollo</strong><span data-va="Carn">Carne</span></li>
+      </ul>
+      <p class="carta-note edit" data-va="Selecció basada en les ressenyes de Google. Carta completa i preus: pregunta'ns.">Selección basada en las reseñas de Google. Carta completa y precios: pregúntanos.</p>
+    </div>
+    <div class="carta-img rv">
+      <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=900&h=1100&fit=crop" width="900" height="1100" loading="lazy" alt="Paella con mejillones, almejas y limón" data-va-alt="Paella amb musclos, cloïsses i llima">
+    </div>
+  </div>
+</section>
+
+<section id="galeria" aria-labelledby="tg">
+  <div class="wrap">
+    <h2 id="tg" data-va="Mira quina pinta">Mira qué pinta</h2>
+    <div class="gal">
+      <figure class="g1 rv"><img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=900&h=900&fit=crop" width="900" height="900" loading="lazy" alt="Paella de marisco" data-va-alt="Paella de marisc"></figure>
+      <figure class="g2 rv" style="--d:50ms"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=500&h=500&fit=crop" width="500" height="500" loading="lazy" alt="Gambas frescas" data-va-alt="Gambes fresques"></figure>
+      <figure class="g3 rv" style="--d:100ms"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=500&fit=crop" width="500" height="500" loading="lazy" alt="Brochetas a la parrilla" data-va-alt="Broquetes a la graella"></figure>
+      <figure class="g4 rv" style="--d:150ms"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&h=900&fit=crop" width="500" height="900" loading="lazy" alt="Costillar de carne con tomate" data-va-alt="Costellam de carn amb tomaca"></figure>
+      <figure class="g5 rv" style="--d:200ms"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=900&h=450&fit=crop" width="900" height="450" loading="lazy" alt="Pescado a la plancha con verduras" data-va-alt="Peix a la planxa amb verdures"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="opiniones" aria-labelledby="tr">
+  <div class="wrap rev-grid">
+    <div>
+      <h2 id="tr" data-va="Ressenyes de Google">Reseñas de Google</h2>
+      <p class="stars" aria-hidden="true">★★★★★</p>
+      <div class="quotes">
+        <blockquote class="rv"><p lang="en">“Best paella in town, definitely a must before leaving Spain.”</p><cite data-va="Ressenya de Google · 5 de 5">Reseña de Google · 5 de 5</cite></blockquote>
+        <blockquote class="rv" style="--d:60ms"><p lang="en">“The pork cheeks were falling apart and the portions quite big.”</p><cite data-va="Ressenya de Google · 4 de 5">Reseña de Google · 4 de 5</cite></blockquote>
+        <blockquote class="rv" style="--d:120ms"><p lang="en">“Service was super friendly.”</p><cite data-va="Ressenya de Google · 5 de 5">Reseña de Google · 5 de 5</cite></blockquote>
+      </div>
+      <p class="note" data-va="Ressenyes originals en anglés. Valoració global: 4,5 amb 518 ressenyes.">Reseñas originales en inglés. Valoración global: 4,5 con 518 reseñas.</p>
+    </div>
+    <div class="hrs">
+      <h3 data-va="Horari">Horario</h3>
+      <table>
+        <tbody id="horas">
+          <tr data-d="1"><th scope="row" data-va="Dilluns">Lunes</th><td>10:30 – 18:00</td></tr>
+          <tr data-d="2"><th scope="row" data-va="Dimarts">Martes</th><td>10:30 – 18:00</td></tr>
+          <tr data-d="3"><th scope="row" data-va="Dimecres">Miércoles</th><td>10:30 – 18:00</td></tr>
+          <tr data-d="4"><th scope="row" data-va="Dijous">Jueves</th><td>10:30 – 18:00</td></tr>
+          <tr data-d="5"><th scope="row" data-va="Divendres">Viernes</th><td>10:30 – 24:00</td></tr>
+          <tr data-d="6"><th scope="row" data-va="Dissabte">Sábado</th><td>10:30 – 24:00</td></tr>
+          <tr data-d="0"><th scope="row" data-va="Diumenge">Domingo</th><td>10:30 – 24:00</td></tr>
+        </tbody>
+      </table>
+      <p class="note edit" data-va="Horari orientatiu; confirma'l per telèfon abans de vindre.">Horario orientativo; confírmalo por teléfono antes de venir.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto" aria-labelledby="tk">
+  <div class="wrap c-grid">
+    <div>
+      <h2 id="tk" data-va="Vine a menjar a Cullera">Ven a comer a Cullera</h2>
+      <address>Carrer Barcelona, 3<br>46400 Cullera, Valencia</address>
+      <p><a href="tel:+34620747461" style="font:800 1.8rem var(--display);text-decoration:none">620 74 74 61</a></p>
+      <div class="c-btns">
+        <a class="btn btn-ink" href="https://wa.me/34620747461?text=Hola%2C%20quiero%20reservar%20mesa%20en%20TukanCullera." data-va="Reserva per WhatsApp">Reserva por WhatsApp</a>
+        <a class="btn btn-line" style="color:var(--ink)" href="tel:+34620747461" data-va="Crida'ns">Llámanos</a>
+      </div>
+      <ul class="tags">
+        <li data-va="Accessible per a cadira de rodes">Accesible para silla de ruedas</li>
+        <li data-va="Menjar al local, autoservei o entrega sense contacte">Comer en el local, autoservicio o entrega sin contacto</li>
+        <li data-va="Local amic de la comunitat LGTBQ+ i de propietàries dones">Local amigo de la comunidad LGTBQ+ y de propietarias mujeres</li>
+      </ul>
+    </div>
+    <iframe class="mapa" title="Mapa: TukanCullera, Carrer Barcelona 3, Cullera" data-va-title="Mapa: TukanCullera, Carrer Barcelona 3, Cullera" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Carrer+Barcelona+3,+46400+Cullera&output=embed"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© TukanCullera · Carrer Barcelona, 3 · Cullera</p>
+    <a href="https://porfolio-pepe.vercel.app" data-va="Web de Pepe Llopis">Web de Pepe Llopis</a>
+  </div>
+</footer>
+
+<div class="fixbar">
+  <a class="btn btn-line" href="tel:+34620747461" data-va="Crida">Llamar</a>
+  <a class="btn btn-pico" href="https://wa.me/34620747461?text=Hola%2C%20quiero%20reservar%20mesa%20en%20TukanCullera." data-va="Reserva taula">Reserva mesa</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var L='es';
+  var $=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var meta={
+    es:{t:'TukanCullera · Cullera | Paella y marisco para compartir',d:'TukanCullera · Cullera. Paella, marisco y raciones generosas en Carrer Barcelona, 3. 4,5 en Google con 518 reseñas. Reserva por teléfono o WhatsApp.'},
+    va:{t:'TukanCullera · Cullera | Paella i marisc per a compartir',d:'TukanCullera · Cullera. Paella, marisc i racions generoses a Carrer Barcelona, 3. 4,5 a Google amb 518 ressenyes. Reserva per telèfon o WhatsApp.'}};
+  // guardar ES original
+  $('[data-va]').forEach(function(e){e.dataset.es=e.textContent});
+  $('[data-va-alt]').forEach(function(e){e.dataset.esAlt=e.alt});
+  $('[data-va-aria]').forEach(function(e){e.dataset.esAria=e.getAttribute('aria-label')});
+  $('[data-va-title]').forEach(function(e){e.dataset.esTitle=e.title});
+  var estadoTxt={
+    es:{open:function(h){return 'Abierto ahora · cerramos a las '+h},closed:function(h,d){return 'Cerrado ahora · abrimos '+d+' a las '+h}, hoy:'hoy',man:'mañana'},
+    va:{open:function(h){return 'Obert ara · tanquem a les '+h},closed:function(h,d){return 'Tancat ara · obrim '+d+' a les '+h}, hoy:'hui',man:'demà'}};
+  function madrid(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};
+    p.forEach(function(x){o[x.type]=x.value});
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday];
+    return {d:wd,m:(+o.hour%24)*60+(+o.minute)};
+  }
+  function closeMin(d){return (d===0||d>=5)?1440:1080}
+  function estado(){
+    var n=madrid(),el=$('#estado')[0],t=estadoTxt[L],open=n.m>=630&&n.m<closeMin(n.d);
+    var ch=closeMin(n.d)===1440?'24:00':'18:00';
+    el.className='estado '+(open?'on':'off');
+    $('span',el)[0].textContent=open?t.open(ch):t.closed('10:30',n.m<630?t.hoy:t.man);
+    $('#horas tr').forEach(function(r){r.classList.toggle('hoy',+r.dataset.d===n.d)});
+  }
+  function setLang(l){
+    L=l;document.documentElement.lang=l==='va'?'ca-ES-valencia':'es';
+    $('[data-va]').forEach(function(e){e.textContent=l==='va'?e.dataset.va:e.dataset.es});
+    $('[data-va-alt]').forEach(function(e){e.alt=l==='va'?e.dataset.vaAlt:e.dataset.esAlt});
+    $('[data-va-aria]').forEach(function(e){e.setAttribute('aria-label',l==='va'?e.dataset.vaAria:e.dataset.esAria)});
+    $('[data-va-title]').forEach(function(e){e.title=l==='va'?e.dataset.vaTitle:e.dataset.esTitle});
+    $('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    document.title=meta[l].t;
+    $('meta[name=description]')[0].content=meta[l].d;
+    estado();
+    try{localStorage.setItem('tukan-lang',l)}catch(e){}
+  }
+  $('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+  var s=null;try{s=localStorage.getItem('tukan-lang')}catch(e){}
+  if(s==='va')setLang('va');else estado();
+  setInterval(estado,60000);
+  // menú móvil
+  var nav=$('#nav')[0],bg=$('#burger')[0];
+  bg.addEventListener('click',function(){var o=nav.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+  $('a',nav).forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');bg.setAttribute('aria-expanded','false')})});
+  // reveal
+  var rv=$('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    rv.forEach(function(e){io.observe(e)});
+  }else rv.forEach(function(e){e.classList.add('in')});
+  // foto rota → bloque de color
+  $('img').forEach(function(i){i.addEventListener('error',function(){i.style.visibility='hidden'})});
+})();
+</script>
+</body>
+</html>
